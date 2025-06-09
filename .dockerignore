@@ -1,0 +1,13 @@
+.git
+.gitignore
+.gradle
+.idea
+build
+!build/libs/*.jar
+logs
+*.log
+*.md
+!README.md
+docker-compose.yml
+Dockerfile
+.dockerignore 

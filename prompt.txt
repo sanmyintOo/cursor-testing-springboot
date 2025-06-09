@@ -1,0 +1,26 @@
+Create a Java Spring Boot project using Gradle with the following specifications:
+Java Version: 17
+Spring Framework Version: Latest
+Spring Boot Version: Latest
+Gradle Version: Latest version compatible with the Spring version above
+
+Additional Dependencies:
+Lombok (for @Getter and @Setter annotations)
+Swagger (for API documentation)
+Spring Security (for authentication)
+
+The project will use JWT-based authentication. It is a simple CRUD API for a Student Management System.
+
+Functional Requirements:
+Implement a login API using a username and password stored in the database.
+This login API should be accessible via Swagger UI.
+Use a Deployment Listener in Spring Boot to insert a default admin user into the database only when the user table is empty; otherwise, it should be ignored.
+Use PostgreSQL as the database with username/password authentication.
+Configure Swagger to support JWT tokens for all protected APIs.
+Enable logging to a .txt file using Log4j.
+
+Additional Instructions:
+Create the project in the current folder.
+I am using Windows.
+Create a Dockerfile for the project.
+Update the README.md file with instructions for Docker containerization.
