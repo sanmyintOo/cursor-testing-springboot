@@ -2,6 +2,7 @@ package com.example.studentmanagement.controller;
 
 import com.example.studentmanagement.model.Student;
 import com.example.studentmanagement.repository.StudentRepository;
+import com.example.studentmanagement.services.StudentService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -20,6 +21,7 @@ import java.util.List;
 @SecurityRequirement(name = "bearerAuth")
 public class StudentController {
     private static final Logger logger = LogManager.getLogger(StudentController.class);
+    private final StudentService studentService;
     private final StudentRepository studentRepository;
 
     @GetMapping
@@ -55,6 +57,7 @@ public class StudentController {
             return ResponseEntity.badRequest().build();
         }
         Student savedStudent = studentRepository.save(student);
+        studentService.createStudent("Saved student ID is " + savedStudent.getId());
         logger.debug("Created student: {}", savedStudent);
         return ResponseEntity.ok(savedStudent);
     }
